@@ -9,7 +9,7 @@ function SelectorComponent(props) {
         buttons={['Beginner', 'Intermediate', 'Advanced']}
         selectedIndex={props.difficultyIndex}
         onPress={(value) => {
-          props.setDifficultyIndex(value);
+          props.onDifficultyChange(value);
         }}
         containerStyle={{ marginBottom: 20 }}
       />
@@ -18,7 +18,7 @@ function SelectorComponent(props) {
         buttons={['Vault', 'Wall', 'Bar', 'Flips']}
         selectedIndex={props.categoryIndex}
         onPress={(value) => {
-          props.setCategoryIndex(value);
+          props.onCategoryChange(value);
         }}
         containerStyle={{ marginBottom: 20 }}
       />

@@ -5,9 +5,8 @@ import { StyleSheet } from "react-native";
 const SkillCount = (props) => {
     if(props.category){
       return(
-        <View>
-        <Text>Skills In Category</Text>
-        <Text>{props.category.length}</Text>
+        <View style={styles.countContainer}>
+        <Text>Skills In Category: {props.category.length}</Text>
       </View>
       );
     } else {
@@ -16,24 +15,16 @@ const SkillCount = (props) => {
   }
 
   const styles = StyleSheet.create({
-    styleContainer: {
-        height: 200,
-        overflow: 'scroll'
-    },
-    skillItem: {
-        padding: 15,
-        backgroundColor: '#f8f8f8',
+    countContainer: {
+        marginTop: 5,
+        padding: 5,
+        justifyContent: 'center',
         borderBottomWidth: 1,
-        borderColor: '#eee'
+        borderBottomColor: 'black',
+        backgroundColor: '#f8f8f8',
+        borderTopWidth: 1,
+        borderTopColor: 'black'
     },
-    skillItemView: {
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center'
-    },
-    listItemText: {
-        fontSize: 18,
-    }
 });
   
   export default SkillCount
