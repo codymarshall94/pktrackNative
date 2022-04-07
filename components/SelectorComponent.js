@@ -1,26 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ButtonGroup } from 'react-native-elements';
 
-function SelectorComponent() {
-  const [difficultyIndex, setDifficultyIndex] = useState(0);
-  const [categoryIndex, setCategoryIndex] = useState(0);
+function SelectorComponent(props) {
 
   return (
     <>
       <ButtonGroup
         buttons={['Beginner', 'Intermediate', 'Advanced']}
-        selectedIndex={difficultyIndex}
+        selectedIndex={props.difficultyIndex}
         onPress={(value) => {
-          setDifficultyIndex(value);
+          props.setDifficultyIndex(value);
         }}
         containerStyle={{ marginBottom: 20 }}
       />
 
       <ButtonGroup
         buttons={['Vault', 'Wall', 'Bar', 'Flips']}
-        selectedIndex={categoryIndex}
+        selectedIndex={props.categoryIndex}
         onPress={(value) => {
-          setCategoryIndex(value);
+          props.setCategoryIndex(value);
         }}
         containerStyle={{ marginBottom: 20 }}
       />
