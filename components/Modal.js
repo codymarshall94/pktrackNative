@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-native-modal";
 import { View, Text } from 'react-native';
-import { Button } from "react-native-elements";
+import { Button, CheckBox } from "react-native-elements";
 import { StyleSheet } from "react-native";
 
-
-
 function SkillModal(props) {
+    const [check, setCheck] = useState(false);
 
     return(
         <Modal 
@@ -22,6 +21,7 @@ function SkillModal(props) {
                 </View>
                 <View>
                     <Text style={styles.modalSubHeader}>Prerequisites:</Text>
+                    <Text style={styles.modalContentText}>{props.activeSkill.prerequisite}</Text>
                 </View>
                 <View>
                     <Text style={styles.modalSubHeader}>Subsquent:</Text>
@@ -31,8 +31,14 @@ function SkillModal(props) {
                         title="Go Back" 
                         type='outline' 
                         onPress={props.toggleModal}
-                        style={{width: 40, marginTop: 20}}/>
+                        style={{width: 40, marginTop:5}}/>
                 </View>
+                <CheckBox
+                    center
+                    title='Track Skill'
+                    checked={check}
+                    onPress={() => setCheck(!check)}
+                />
             </View>
         </Modal>
     )
@@ -63,6 +69,9 @@ const styles = StyleSheet.create({
 
     modalContentText: {
         fontSize: 12,
+        alignSelf: 'center',
+        paddingBottom: 5,
+        paddingHorizontal: 5,
     }
   });
 

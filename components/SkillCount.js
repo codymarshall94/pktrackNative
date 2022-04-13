@@ -7,7 +7,7 @@ const SkillCount = (props) => {
       return(
         <View style={styles.countContainer}>
         <Text>Skills In Category: {props.category.length}</Text>
-      </View>
+        </View>
       );
     } else {
       return <View />
@@ -17,13 +17,10 @@ const SkillCount = (props) => {
   const styles = StyleSheet.create({
     countContainer: {
         marginTop: 5,
-        padding: 5,
+        padding: 10,
         justifyContent: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: 'black',
-        backgroundColor: '#f8f8f8',
-        borderTopWidth: 1,
-        borderTopColor: 'black'
+        alignSelf: "center",
+        borderTopLeftRadius: 100
     },
 });
   

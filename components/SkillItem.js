@@ -27,27 +27,32 @@ function RenderSkill({ skill, onPressItem }) {
 
 function SkillItem(props) {
 
-    //active skill state is used to store the current clicked item in the skills list
+  //active skill state is used to store the current clicked item in the skills list
 
-    const [isModalVisible, setModalVisible] = useState(false);
-    const [activeSkill, setActiveSkill] = useState(0)
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [activeSkill, setActiveSkill] = useState(0)
+  const [track, setTrack] = useState(false);
 
-    const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-    }
+  const onTrackChange = () => {
+  setTrack(!track);
+  }
 
-    //this function grabs the item passed in from RenderSkill and is store in the state
-    const onPressItem = (item) => {
-        setActiveSkill(item)
-        toggleModal();
-    }
+  const toggleModal = () => {
+  setModalVisible(!isModalVisible);
+  }
+
+  //this function grabs the item passed in from RenderSkill and is store in the state
+  const onPressItem = (item) => {
+      setActiveSkill(item)
+      toggleModal();
+  }
 
   return (
 
     //Passing the category to Data then rendering through each item with the RenderSkill functionional component
 
     <>
-      <View style={styles.styleContainer}>
+      <View style={styles.listWrapper}>
         <FlatList
             data={props.category}
             renderItem={({ item }) => 
@@ -62,6 +67,7 @@ function SkillItem(props) {
         isModalVisible={isModalVisible} 
         toggleModal={toggleModal}
         activeSkill={activeSkill}
+        trackSkill={onTrackChange}
         />
     </>
   );
@@ -70,13 +76,15 @@ function SkillItem(props) {
 /*-----------------STYLESHEET-----------------------*/
 
 const styles = StyleSheet.create({
-  styleContainer: {
+  listWrapper: {
     height: 200,
     overflow: "scroll",
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    backgroundColor: '#FFF'
   },
   skillItem: {
     padding: 15,
-    backgroundColor: "#f8f8f8",
     borderBottomWidth: 1,
     borderColor: "#eee",
   },

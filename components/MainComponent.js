@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
 import SelectorComponent from "./SelectorComponent";
 import SkillCount from "./SkillCount";
 import SkillItem from "./SkillItem";
@@ -11,7 +12,7 @@ function Main() {
   const [difficultyIndex, setDifficultyIndex] = useState(0);
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [category, setCategory] = useState(vaultskill[0]);
-
+  
   const onDifficultyChange = (value) => {
     setDifficultyIndex(value);
     onCategoryChange();
@@ -23,7 +24,7 @@ function Main() {
     if (value == [0]) {
       setCategory(vaultskill[difficultyIndex]);
     } else if (value == [1]) {
-      setCategory(wallSkill);
+      setCategory(wallSkill[difficultyIndex]);
     } else if (value == [2]) {
       setCategory(barSkill[difficultyIndex]);
     } else if (value == [3]) {
@@ -34,7 +35,8 @@ function Main() {
   };
 
   return (
-    <>
+    <View
+      style={styles.pageWrapper}>
       <SelectorComponent
         categoryIndex={categoryIndex}
         setCategoryIndex={setCategoryIndex}
@@ -44,14 +46,23 @@ function Main() {
         onCategoryChange={onCategoryChange}
         onDifficultyChange={onDifficultyChange}
       />
+
+      <SkillCount category={category} />
       <SkillItem
         category={category}
         setCategory={setCategory}
         categoryIndex={categoryIndex}
       />
-      <SkillCount category={category} />
-    </>
+      
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  pageWrapper: {
+      flex: 1,
+      backgroundColor: '#F2F8FD',
+  },
+});
 
 export default Main;
