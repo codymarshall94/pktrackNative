@@ -3,90 +3,78 @@ export const barSkill = [
         {
             id: 0,
             name: "Underbar",
-            description: "A run and dive into a Monkey Vault.",
+            description: "A two-foot jump between two horizontal parallel bars. As the body moves between the bars, both hands grab and push the top bar to assist upper body through.",
             difficulty: "beginner"
         },
         {
             id: 1,
             name: "Lache",
-            description: "A one-hand vault using the opposite foot to step off the top of the wall as the other foot kicks through.",
+            description: "A swing off a bar",
             difficulty: "beginner"
         },
         {
             id: 2,
             name: "Lache Precision",
-            description: "A vault where the practitioner pushes off the obstacle with both hands into a 360 degree rotation over the obstacle.",
+            description: "A swing off a bar landing in a precision",
             difficulty: "beginner"
         },
         {
             id: 3,
             name: "Lache Regrab",
-            description: "A vault with both legs passing over the side.",
+            description: "A swing off a bar and grabbing onto another bar",
             difficulty: "beginner"
         },
     ],
     [
         {
             id: 0,
-            name: "Harder Underbar",
-            description: "A run and dive into a Monkey Vault.",
-            difficulty: "beginner"
+            name: "Dive Underbar",
+            description: "A diving catch into underbar",
+            difficulty: "intermediate"
         },
         {
             id: 1,
-            name: "Lache",
-            description: "A one-hand vault using the opposite foot to step off the top of the wall as the other foot kicks through.",
-            difficulty: "beginner"
+            name: "Lache to Cat Hang",
+            description: "Lache landing in Cat Hang position.",
+            difficulty: "intermediate"
         },
         {
             id: 2,
             name: "Reverse Underbar",
             description: "A vault where the hand closest to the wall pushes off immediately followed by the leg on the same side. When both legs are over, the opposite hand helps push away.",
-            difficulty: "beginner"
+            difficulty: "intermediate"
         },
         {
             id: 3,
-            name: "Lache Precision",
-            description: "A vault where the practitioner pushes off the obstacle with both hands into a 360 degree rotation over the obstacle.",
-            difficulty: "beginner"
-        },
-        {
-            id: 4,
-            name: "Lache Regrab",
-            description: "A vault with both legs passing over the side.",
-            difficulty: "beginner"
+            name: "Underbar Precision",
+            description: "A underbar swing landing in a precision",
+            difficulty: "intermediate"
         },
     ],
     [
         {
             id: 0,
-            name: "Reverse Underbar",
-            description: "A run and dive into a Monkey Vault.",
-            difficulty: "beginner"
+            name: "Dive Reverse Underbar",
+            description: "An underbar using both hands to pull the body through head first.",
+            difficulty: "advanced"
         },
         {
             id: 1,
-            name: "Lache",
-            description: "A one-hand vault using the opposite foot to step off the top of the wall as the other foot kicks through.",
-            difficulty: "beginner"
+            name: "Lache Level Precision",
+            description: "A lache from a bar and landing in a precision on bar or obstacle the same height as the initial bar.",
+            difficulty: "advanced"
         },
         {
             id: 2,
-            name: "reverse underbar",
-            description: "A vault where the hand closest to the wall pushes off immediately followed by the leg on the same side. When both legs are over, the opposite hand helps push away.",
-            difficulty: "beginner"
+            name: "Lache Bounce Back Regrab",
+            description: "A lache from a bar towards a wall, immediately pushing off feet to do an 180 turn and regrab the bar.",
+            difficulty: "advanced"
         },
         {
             id: 3,
-            name: "lache precision",
-            description: "A vault where the practitioner pushes off the obstacle with both hands into a 360 degree rotation over the obstacle.",
-            difficulty: "beginner"
-        },
-        {
-            id: 4,
-            name: "lache regrab",
-            description: "A vault with both legs passing over the side.",
-            difficulty: "beginner"
+            name: "Quarter Turn Lache",
+            description: "A lache where the practioner turns their body 90 degrees letting go 1 hand at a time around a corner.",
+            difficulty: "advanced"
         },
     ],
 ]

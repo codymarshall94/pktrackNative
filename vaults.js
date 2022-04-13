@@ -62,6 +62,8 @@ export const vaultskill = [
             id: 0,
             name: "Double Kong",
             description: "Kong Vault into a dive to a consecutive Kong.",
+            prerequisite: ['Dive Kong'],
+            subsequent: ['Triple Kong'],
             difficulty: "advanced"
         },
         {
