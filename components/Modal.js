@@ -7,6 +7,12 @@ import { StyleSheet } from "react-native";
 function SkillModal(props) {
     const [check, setCheck] = useState(false);
 
+    const changeTrack = (value) => {
+        setCheck(value);
+        props.setTracked(value);
+        props.setActiveSkillTrack(value);
+    } 
+
     return(
         <Modal 
             isVisible={props.isModalVisible}
@@ -26,19 +32,25 @@ function SkillModal(props) {
                 <View>
                     <Text style={styles.modalSubHeader}>Subsquent:</Text>
                 </View>
+                <View>
+                    <CheckBox
+                        center
+                        title='Track Skill'
+                        checkedTitle="Skill Tracked"
+                        checked={props.activeSkill.isTracked}
+                        onPress={() => changeTrack(!check)}
+                        textStyle={{fontFamily: 'mainText'}}
+                        containerStyle={{backgroundColor: '#FFF', border: 'none', }}
+                        checkedColor='green'
+                    />
+                </View>
                 <View style={{ width: 100, height: 100, alignSelf: 'center'}}>
                     <Button 
                         title="Go Back" 
-                        type='outline' 
                         onPress={props.toggleModal}
-                        style={{width: 40, marginTop:5}}/>
+                        style={{width: 40, marginTop:5, color:'black'}}
+                        buttonStyle={{backgroundColor: '#554BB2'}}/>
                 </View>
-                <CheckBox
-                    center
-                    title='Track Skill'
-                    checked={check}
-                    onPress={() => setCheck(!check)}
-                />
             </View>
         </Modal>
     )
@@ -52,7 +64,7 @@ const styles = StyleSheet.create({
     },
     modalHeader: {
         height: 100,
-        backgroundColor: 'blue',
+        backgroundColor: '#554BB2',
         fontSize: 18,
         justifyContent: "center",
     },
@@ -60,11 +72,13 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignSelf: "center",
         color: 'white',
+        fontFamily: 'mainText'
     },
 
     modalSubHeader: {
         alignSelf: 'center',
-        fontSize: 16
+        fontSize: 16,
+        fontFamily: 'mainText'
     },
 
     modalContentText: {
@@ -72,6 +86,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         paddingBottom: 5,
         paddingHorizontal: 5,
+        fontFamily: 'mainText'
     }
   });
 

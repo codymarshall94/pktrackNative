@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { ButtonGroup } from 'react-native-elements';
@@ -16,6 +17,7 @@ function SelectorComponent(props) {
         }}
         containerStyle={{ marginBottom: 20 }}
         selectedButtonStyle={styles.buttonStyleSelected}
+        textStyle={{fontFamily: 'mainText'}}
       />
 
       <ButtonGroup
@@ -26,6 +28,7 @@ function SelectorComponent(props) {
         }}
         containerStyle={{ marginBottom: 20 }}
         selectedButtonStyle={styles.buttonStyleSelected}
+        textStyle={{fontFamily: 'mainText'}}
       />
     </View>
   </>
@@ -34,7 +37,7 @@ function SelectorComponent(props) {
 
 const styles = StyleSheet.create({
   buttonWrapper: {
-      backgroundColor: '#FFF',
+    backgroundColor: '#FFF',
   },
   buttonStyleSelected: {
     backgroundColor: '#554BB2',

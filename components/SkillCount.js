@@ -6,7 +6,7 @@ const SkillCount = (props) => {
     if(props.category){
       return(
         <View style={styles.countContainer}>
-        <Text>Skills In Category: {props.category.length}</Text>
+        <Text style={{fontFamily: 'mainText'}}>Skills In Category: {props.category.length}</Text>
         </View>
       );
     } else {
